@@ -6,6 +6,29 @@
     <title>Pré-Save - Challenge</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Big+Caslon+CC&family=Univers+Next:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo adicional para as plataformas */
+        .platforms {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .platform {
+            background-color: #1c211f; /* Cor de fundo */
+            color: #f0f0f0; /* Cor do texto */
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .platform:hover {
+            background-color: #333; /* Cor ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,18 +48,15 @@
 
                 <div class="platforms">
                     <h3>Escolha sua plataforma:</h3>
-                    <label>
-                        <input type="checkbox" name="platform" value="spotify">
-                        <a href="https://open.spotify.com/" target="_blank">Spotify</a>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="platform" value="apple_music">
-                        <a href="https://music.apple.com/br" target="_blank">Apple Music</a>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="platform" value="deezer">
-                        <a href="https://www.deezer.com/br/" target="_blank">Deezer</a>
-                    </label>
+                    <div class="platform" onclick="window.open('https://open.spotify.com/show/2wZjVDkili8nWmvbXKCyzr', '_blank')">
+                        Spotify
+                    </div>
+                    <div class="platform" onclick="window.open('https://podcasts.apple.com/us/podcast/enric-vaiollet/id1769657958', '_blank')">
+                        Apple Music
+                    </div>
+                    <div class="platform" onclick="window.open('https://www.deezer.com/fr/show/1001250521', '_blank')">
+                        Deezer
+                    </div>
                 </div>
 
                 <label>
