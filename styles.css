@@ -1,86 +1,48 @@
-/* Definições básicas */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Aplicando a fonte Univers Next 430 Typewriter */
-@font-face {
-    font-family: 'Univers Next 430 Typewriter';
-    src: url('fonts/UniversNext430TypewriterRegular.woff') format('woff'); /* Ajuste o nome do arquivo conforme necessário */
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Univers Next 430 Typewriter', sans-serif; /* Mudado para a nova fonte */
-    background-color: #f0f0f0; /* Cor de fundo alterada */
-    color: #1c211f; /* Cor do texto alterada */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    text-transform: uppercase; /* Tudo em maiúsculo */
-}
-
-/* Container principal */
-.container {
-    max-width: 1200px;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Estilo do cabeçalho */
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    color: #1c211f; /* Mudado para a nova cor */
-}
-
-header span {
-    color: #CCCCCC; /* Destaque para o nome do álbum */
-}
-
-.subheader {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    color: #999999;
-}
-
-/* Seção do caça-palavras */
-.puzzle-section {
+/* Seção de pré-save */
+.presave-section {
     margin-top: 50px;
 }
 
-.puzzle h2 {
-    font-size: 2.5rem;
+.presave-section h2 {
+    font-size: 2rem; /* Tamanho ajustado */
     margin-bottom: 20px;
 }
 
-.puzzle p {
-    font-size: 1.2rem;
-    color: #1c211f; /* Mudado para a nova cor */
-}
-
-/* Footer */
-footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: #777777;
-}
-
-/* Estilo para o caça-palavras */
-#word-search {
-    width: 100%;
-    height: 400px;
-    background-color: #1A1A1A;
-    border: 2px solid #1c211f; /* Mudado para a nova cor */
-    padding: 20px;
+.presave-section form {
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+.presave-section label {
+    font-size: 1rem; /* Tamanho do texto */
+    margin: 10px 0;
+}
+
+.presave-section input {
+    padding: 10px;
+    border: 1px solid #1c211f;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%; /* Ajuste para melhor visualização */
+}
+
+.presave-section button {
+    padding: 10px 20px;
+    background-color: #1c211f;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%; /* Ajuste para o botão */
+}
+
+.presave-section button:hover {
+    background-color: #333333;
+}
+
+/* Estilo para checkboxes */
+.presave-section input[type="checkbox"] {
+    margin-right: 10px;
 }
