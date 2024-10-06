@@ -5,16 +5,24 @@
     box-sizing: border-box;
 }
 
-/* Aplicando a fonte Big Caslon */
+/* Aplicando a fonte Univers Next 430 Typewriter */
+@font-face {
+    font-family: 'Univers Next 430 Typewriter';
+    src: url('fonts/UniversNext430TypewriterRegular.woff') format('woff'); /* Ajuste o nome do arquivo conforme necessário */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Big Caslon CC', serif;
-    background-color: #000000;
-    color: #FFFFFF;
+    font-family: 'Univers Next 430 Typewriter', sans-serif; /* Mudado para a nova fonte */
+    background-color: #f0f0f0; /* Cor de fundo alterada */
+    color: #1c211f; /* Cor do texto alterada */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    text-transform: uppercase; /* Tudo em maiúsculo */
 }
 
 /* Container principal */
@@ -30,7 +38,7 @@ header h1 {
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    color: #FFFFFF;
+    color: #1c211f; /* Mudado para a nova cor */
 }
 
 header span {
@@ -55,7 +63,7 @@ header span {
 
 .puzzle p {
     font-size: 1.2rem;
-    color: #DDDDDD;
+    color: #1c211f; /* Mudado para a nova cor */
 }
 
 /* Footer */
@@ -70,7 +78,7 @@ footer {
     width: 100%;
     height: 400px;
     background-color: #1A1A1A;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #1c211f; /* Mudado para a nova cor */
     padding: 20px;
     display: flex;
     justify-content: center;
