@@ -1,28 +1,54 @@
-<div class="presave-section">
-    <h2>PRÉ-SAVE AGORA</h2>
-    <form id="presave-form" action="https://link-para-pre-save.com" method="POST" target="_blank">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-Save - Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Caslon+CC&family=Univers+Next:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ENRIC VAIOLLET</h1>
+            <span>PRÉ-SAVE DO ÁLBUM: CHALLENGE</span>
+        </header>
 
-        <label for="birthdate">Data de Nascimento:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
+        <div class="presave-section">
+            <h2>PRÉ-SAVE AGORA</h2>
+            <form id="presave-form" action="#" method="POST">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
 
-        <p>Escolha sua plataforma preferida:</p>
-        <label>
-            <input type="checkbox" name="platform" value="Spotify"> Spotify
-        </label>
-        <label>
-            <input type="checkbox" name="platform" value="Apple Music"> Apple Music
-        </label>
-        <label>
-            <input type="checkbox" name="platform" value="Deezer"> Deezer
-        </label>
+                <div class="platforms">
+                    <h3>Escolha sua plataforma:</h3>
+                    <label>
+                        <input type="checkbox" name="platform" value="spotify">
+                        <a href="https://open.spotify.com/" target="_blank">Spotify</a>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="platform" value="apple_music">
+                        <a href="https://music.apple.com/br" target="_blank">Apple Music</a>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="platform" value="deezer">
+                        <a href="https://www.deezer.com/br/" target="_blank">Deezer</a>
+                    </label>
+                </div>
 
-        <label>
-            <input type="checkbox" id="terms" name="terms" required>
-            Concordo com os termos
-        </label>
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    Concordo com os termos
+                </label>
 
-        <button type="submit">PRÉ-SAVE</button>
-    </form>
-</div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
