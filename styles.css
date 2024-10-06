@@ -1,48 +1,89 @@
-/* Seção de pré-save */
-.presave-section {
-    margin-top: 50px;
+/* Definições básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.presave-section h2 {
-    font-size: 2rem; /* Tamanho ajustado */
-    margin-bottom: 20px;
-}
-
-.presave-section form {
-    margin-top: 20px;
+/* Aplicando a fonte Big Caslon */
+body {
+    font-family: 'Big Caslon CC', serif;
+    background-color: #f0f0f0; /* Fundo claro */
+    color: #1c211f; /* Cor do texto */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.presave-section label {
-    font-size: 1rem; /* Tamanho do texto */
+/* Container principal */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo do cabeçalho */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header span {
+    font-size: 1.5rem;
+    color: #1c211f; /* Cor do nome do álbum */
+}
+
+.presave-section {
+    margin-top: 30px;
+}
+
+/* Estilo do formulário */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1rem;
+}
+
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1c211f;
+    border-radius: 4px;
+}
+
+/* Estilo dos links das plataformas */
+.platforms {
+    margin: 20px 0;
+}
+
+.platforms label {
+    display: block;
     margin: 10px 0;
 }
 
-.presave-section input {
-    padding: 10px;
-    border: 1px solid #1c211f;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 80%; /* Ajuste para melhor visualização */
-}
-
-.presave-section button {
-    padding: 10px 20px;
+/* Estilo do botão de enviar */
+button {
     background-color: #1c211f;
     color: #FFFFFF;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    width: 50%; /* Ajuste para o botão */
+    font-size: 1rem;
 }
 
-.presave-section button:hover {
-    background-color: #333333;
+button:hover {
+    background-color: #333333; /* Cor de hover */
 }
 
-/* Estilo para checkboxes */
-.presave-section input[type="checkbox"] {
-    margin-right: 10px;
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #777777;
 }
