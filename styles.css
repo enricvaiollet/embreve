@@ -1,56 +1,52 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
-  background-color: #f2f2f7;
-  color: #111;
+const musicList = document.getElementById('music-list');
+const search = document.getElementById('search');
+const audio = document.getElementById('audio');
+const albumCover = document.getElementById('album-cover');
+const songTitle = document.getElementById('song-title');
+const artistName = document.getElementById('artist-name');
+
+const sampleSongs = [
+  {
+    title: 'Shape of You',
+    artist: 'Ed Sheeran',
+    cover: 'https://link-da-capa.jpg',
+    audio: 'https://link-da-musica.mp3'
+  },
+  {
+    title: 'Blinding Lights',
+    artist: 'The Weeknd',
+    cover: 'https://link-da-capa2.jpg',
+    audio: 'https://link-da-musica2.mp3'
+  }
+];
+
+function renderSongs(songs) {
+  musicList.innerHTML = '';
+  songs.forEach(song => {
+    const card = document.createElement('div');
+    card.className = 'album-card';
+    card.innerHTML = `
+      <img src="${song.cover}" />
+      <h4>${song.title}</h4>
+      <p>${song.artist}</p>
+    `;
+    card.onclick = () => {
+      songTitle.textContent = song.title;
+      artistName.textContent = song.artist;
+      albumCover.src = song.cover;
+      audio.src = song.audio;
+      audio.play();
+    };
+    musicList.appendChild(card);
+  });
 }
 
-.navbar {
-  background-color: #fff;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+search.addEventListener('input', () => {
+  const q = search.value.toLowerCase();
+  const filtered = sampleSongs.filter(song =>
+    song.title.toLowerCase().includes(q) || song.artist.toLowerCase().includes(q)
+  );
+  renderSongs(filtered);
+});
 
-#search {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.album-card {
-  background-color: #fff;
-  padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  cursor: pointer;
-  text-align: center;
-}
-
-.album-card img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-#player {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  padding: 1rem;
-  border-top: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+renderSongs(sampleSongs);
