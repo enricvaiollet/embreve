@@ -1,115 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRÉ-SAVE: ALBUM</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Caslon+CC&family=Univers+Next:wght@400&display=swap" rel="stylesheet">
-    <style>
-        /* Estilo adicional para as plataformas */
-        .platforms {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-        }
-
-        .platform {
-            background-color: #FFFFFF;
-            color: #1c211f;
-            padding: 20px;
-            margin: 10px 0;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 0; /* Deixando as bordas quadradas */
-            border: 2px solid #1c211f; /* Borda mais grossa */
-            transition: background-color 0.3s;
-            font-weight: bold; /* Texto em negrito */
-        }
-
-        .platform:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Estilo para o formulário */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Estilo para os campos de e-mail e data de nascimento */
-        .form-group {
-            display: flex;
-            gap: 10px; /* Espaçamento entre os campos */
-            margin-top: 20px;
-        }
-
-        input[type="email"], input[type="date"] {
-            padding: 10px;
-            border: 2px solid #1c211f; /* Borda mais grossa */
-            border-radius: 0; /* Deixando as bordas quadradas */
-            font-size: 1em;
-        }
-
-        input[type="email"] {
-            flex: 2; /* O campo de e-mail ocupa mais espaço */
-        }
-
-        input[type="date"] {
-            flex: 1; /* O campo de data de nascimento ocupa menos espaço */
-        }
-
-        /* Estilo para a descrição do álbum */
-        .album-description {
-            font-size: 0.9em;
-            color: #1c211f;
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apple Music Clone</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>ENRIC VAIOLLET</h1>
-            <span>PRÉ-SAVE DO ÁLBUM: CHALLENGE</span>
-        </header>
+  <div id="app">
+    <!-- Navbar estilo Apple Music -->
+    <nav class="navbar">
+      <h1>Biblioteca</h1>
+      <input type="text" id="search" placeholder="Pesquisar músicas..." />
+    </nav>
 
-        <div class="presave-section">
-            <h2>PRÉ-SAVE AGORA</h2>
-            <form id="presave-form" action="#" method="POST">
-                <div class="platforms">
-                    <h3>Escolha sua plataforma:</h3>
-                    <div class="platform" onclick="window.open('https://open.spotify.com/show/2wZjVDkili8nWmvbXKCyzr', '_blank')">
-                        Spotify
-                    </div>
-                    <div class="platform" onclick="window.open('https://podcasts.apple.com/us/podcast/enric-vaiollet/id1769657958', '_blank')">
-                        Apple Music
-                    </div>
-                    <div class="platform" onclick="window.open('https://www.deezer.com/fr/show/1001250521', '_blank')">
-                        Deezer
-                    </div>
-                </div>
+    <!-- Área de exibição dos álbuns -->
+    <div id="music-list" class="grid"></div>
 
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </div>
-
-                <label>
-                    <input type="checkbox" name="terms" required>
-                    Eu li e concordo com os termos de uso.
-                </label>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-
-        <footer>
-            <p>© 2024 ENRIC VAIOLLET</p>
-        </footer>
+    <!-- Player fixo -->
+    <div id="player">
+      <img id="album-cover" src="" alt="Capa" />
+      <div>
+        <h3 id="song-title">Nome da música</h3>
+        <p id="artist-name">Artista</p>
+      </div>
+      <audio id="audio" controls></audio>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
