@@ -1,52 +1,122 @@
-const musicList = document.getElementById('music-list');
-const search = document.getElementById('search');
-const audio = document.getElementById('audio');
-const albumCover = document.getElementById('album-cover');
-const songTitle = document.getElementById('song-title');
-const artistName = document.getElementById('artist-name');
-
-const sampleSongs = [
-  {
-    title: 'Shape of You',
-    artist: 'Ed Sheeran',
-    cover: 'https://link-da-capa.jpg',
-    audio: 'https://link-da-musica.mp3'
-  },
-  {
-    title: 'Blinding Lights',
-    artist: 'The Weeknd',
-    cover: 'https://link-da-capa2.jpg',
-    audio: 'https://link-da-musica2.mp3'
-  }
-];
-
-function renderSongs(songs) {
-  musicList.innerHTML = '';
-  songs.forEach(song => {
-    const card = document.createElement('div');
-    card.className = 'album-card';
-    card.innerHTML = `
-      <img src="${song.cover}" />
-      <h4>${song.title}</h4>
-      <p>${song.artist}</p>
-    `;
-    card.onclick = () => {
-      songTitle.textContent = song.title;
-      artistName.textContent = song.artist;
-      albumCover.src = song.cover;
-      audio.src = song.audio;
-      audio.play();
-    };
-    musicList.appendChild(card);
-  });
+/* Base geral */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #111;
 }
 
-search.addEventListener('input', () => {
-  const q = search.value.toLowerCase();
-  const filtered = sampleSongs.filter(song =>
-    song.title.toLowerCase().includes(q) || song.artist.toLowerCase().includes(q)
-  );
-  renderSongs(filtered);
-});
+/* Navbar estilo iOS */
+.navbar {
+  background-color: #fff;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-renderSongs(sampleSongs);
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+#search {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+/* Galeria de músicas/álbuns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2rem;
+  padding: 1.2rem;
+}
+
+/* Cartão estilo Apple Music */
+.album-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.album-card img {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+
+.album-card h4 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  padding: 0 0.7rem;
+  font-weight: 600;
+}
+
+.album-card p {
+  font-size: 0.9rem;
+  padding: 0 0.7rem 0.8rem 0.7rem;
+  color: #666;
+}
+
+/* Player fixo estilo Apple Music */
+#player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#player img {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+#player h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#player p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+#audio {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+/* Transições suaves */
+* {
+  transition: all 0.2s ease-in-out;
+}
